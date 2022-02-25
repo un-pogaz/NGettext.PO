@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> <html><!--
+ Page saved with SingleFile 
+ url: https://www.gnu.org/software/gettext/manual/html_node/C_0023.html 
+ saved date: Mon Jun 07 2021 10:40:27 GMT+0200 (heure d’été d’Europe centrale)
+--><!-- Created by GNU Texinfo 6.3, http://www.gnu.org/software/texinfo/ --><meta charset=utf-8>
+<title>GNU gettext utilities: C#</title>
+<meta name=description content="GNU gettext utilities: C#">
+<meta name=keywords content="GNU gettext utilities: C#">
+<meta name=resource-type content=document>
+<meta name=distribution content=global>
+<meta name=Generator content=makeinfo>
+<link href=https://www.gnu.org/software/gettext/manual/html_node/index.html#Top rel=start title=Top>
+<link href=https://www.gnu.org/software/gettext/manual/html_node/Program-Index.html#Program-Index rel=index title="Program Index">
+<link href=https://www.gnu.org/software/gettext/manual/html_node/index.html#SEC_Contents rel=contents title="Table of Contents">
+<link href=https://www.gnu.org/software/gettext/manual/html_node/List-of-Programming-Languages.html#List-of-Programming-Languages rel=up title="List of Programming Languages">
+<link href=https://www.gnu.org/software/gettext/manual/html_node/JavaScript.html#JavaScript rel=next title=JavaScript>
+<link href=https://www.gnu.org/software/gettext/manual/html_node/Java.html#Java rel=prev title=Java>
+<style><!--a.summary-letter{text-decoration:none}blockquote.indentedblock{margin-right:0em}blockquote.smallindentedblock{margin-right:0em;font-size:smaller}blockquote.smallquotation{font-size:smaller}div.display{margin-left:3.2em}div.example{margin-left:3.2em}div.lisp{margin-left:3.2em}div.smalldisplay{margin-left:3.2em}div.smallexample{margin-left:3.2em}div.smalllisp{margin-left:3.2em}kbd{font-style:oblique}pre.display{font-family:inherit}pre.format{font-family:inherit}pre.menu-comment{font-family:serif}pre.menu-preformatted{font-family:serif}pre.smalldisplay{font-family:inherit;font-size:smaller}pre.smallexample{font-size:smaller}pre.smallformat{font-family:inherit;font-size:smaller}pre.smalllisp{font-size:smaller}span.nolinebreak{white-space:nowrap}span.roman{font-family:initial;font-weight:normal}span.sansserif{font-family:sans-serif;font-weight:normal}ul.no-bullet{list-style:none}-->html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit}del,ins{text-decoration:none}li{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}legend{color:#000}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}input,button,textarea,select{*font-size:100%}html,body{font-size:1em;text-align:left;text-decoration:none}html{background-color:#e7e7e7}body{max-width:74.92em;margin:0 auto;padding:.5em 1em 1em 1em;background-color:white;border:.1em solid #c0c0c0}p,pre,li,dt,dd,table,code,address{line-height:1.3em}h1{font-size:2em;margin:1em 0}h2{font-size:1.50em;margin:1.0em 0 0.87em 0}h3{font-size:1.30em;margin:1.0em 0 0.87em 0}h4{font-size:1.13em;margin:1.0em 0 0.88em 0}h5{font-size:1.00em;margin:1.0em 0 1.00em 0}p,pre{margin:1em 0}pre{overflow:auto;padding-bottom:.3em}ul,ol,blockquote{margin-left:1.5%;margin-right:1.5%}hr{margin:1em 0}ul li{margin:.5em 1em}ol li{margin:1em}ol ul li{margin:.5em 1em}ul li p,ul ul li{margin-top:.3em;margin-bottom:.3em}ul ul,ol ul{margin-top:0;margin-bottom:0}dl{margin:1em 0 0 0}dt{margin:.5em 0}dd{margin:.5em 3% 1em 3%}dd p{margin:.5em 0}table{display:block;overflow:auto;margin-top:1.5em;margin-bottom:1.5em}th{padding:.3em .5em;text-align:center}td{padding:.2em .5em}address{margin-bottom:1em}caption{margin-bottom:.5em;text-align:center}sup{vertical-align:super}sub{vertical-align:sub}h1,h2,h3,h4,h5,h6,strong,dt,th{font-weight:bold}h1,h2,h3,h4{color:#333}h5,h6,dt{color:#222}a[href]{color:#005090}a[href]:visited{color:#100070}a[href]:active,a[href]:hover{color:#100070;text-decoration:none}h1 a[href]:visited,h2 a[href]:visited,h3 a[href]:visited,h4 a[href]:visited{color:#005090}h1 a[href]:hover,h2 a[href]:hover,h3 a[href]:hover,h4 a[href]:hover{color:#100070}ol{list-style:decimal outside}ul{list-style:square outside}ul ul,ol ul{list-style:circle}li{list-style:inherit}hr{background-color:#ede6d5}table{border:0}abbr,acronym{border-bottom:1px dotted #000;text-decoration:none;cursor:help}del{text-decoration:line-through}em{font-style:italic}small{font-size:.9em}img{max-width:100%}.center,.c{text-align:center}.nocenter{text-align:left}.underline{text-decoration:underline}.nounderline{text-decoration:none}.no-bullet{list-style:none}.inline-list li{display:inline}.netscape4,.no-display{display:none}.contents ul,.shortcontents ul{font-weight:bold}.contents ul ul,.shortcontents ul ul{font-weight:normal}.contents ul{list-style:none}.header,.node{margin:0 -1em;padding:0 1em}.header p,.node p{line-height:2em}.node a,.header a{display:inline-block;line-height:2em}.node a:hover,.header a:hover{background:#f2efe4}table.cartouche td{padding:1.5em}div.display,div.lisp,div.smalldisplay,div.smallexample,div.smalllisp{margin-left:3%}div.example{padding:.8em 1.2em .4em}pre.example{padding:.8em 1.2em}div.example,pre.example{margin:1em 0 1em 3%;-webkit-border-radius:.3em;-moz-border-radius:.3em;border-radius:.3em;border:1px solid #d4cbb6;background-color:#f2efe4}div.example>pre.example{padding:0 0 .4em;margin:0;border:none}pre.menu-comment{padding-top:1.3em;margin:0}@media (min-width:40em){body{padding:.5em 3em 1em 3em}div.header,div.node{margin:0 -3em;padding:0 3em}}blockquote{font-style:normal;border-left:solid 10px red;padding-left:2.5%;margin-left:0px}p,pre,li,dt,dd,table,code,address{line-height:1.5em}var{font-style:italic}div.lisp{padding:.8em 1.2em .4em}pre.lisp{padding:.8em 1.2em}div.lisp,pre.lisp{margin:1em 0 1em 3%;-webkit-border-radius:.3em;-moz-border-radius:.3em;border-radius:.3em;border:1px solid #d4cbb6;background-color:#f2efe4}div.lisp>pre.lisp{padding:0 0 .4em;margin:0;border:none}.header{line-height:2em;font-size:87.5%;color:#433}.settitle,.top,.chapter{font-family:Fira Sans,sans;font-size:250%}.section,.subsection,.subsubsection{font-family:Fira Sans,sans;font-size:150%}dd p,li p{margin-left:0;margin-right:0}a{text-decoration:none;outline-style:none}a:hover{text-decoration:underline}body{max-width:45em}</style>
+<link type=image/x-icon rel="shortcut icon" href=data:image/vnd.microsoft.icon;base64,AAABAAEAEhIAAAEACADYBQAAFgAAACgAAAASAAAAJAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgYGAAkJCQALCwsAExMTACEhIQAkJCQAJycnADMzMwA5OTkAOjo6AD09PQA/Pz8AQEBAAEZGRgBHR0cASkpKAE9PTwBSUlIAW1tbAGFhYQBmZmYAbW1tAHFxcQBzc3MAd3d3AHl5eQB+fn4Af39/AIGBgQCEhIQAh4eHAIyMjACNjY0Aj4+PAJCQkACRkZEAlZWVAJeXlwCampoAm5ubAJycnAChoaEAoqKiAKWlpQCnp6cAqKioAK2trQCvr68AsLCwALGxsQCysrIAs7OzALa2tgC7u7sAvb29AL+/vwDBwcEAwsLCAMPDwwDExMQAxcXFAMbGxgDHx8cAycnJAMrKygDLy8sAzMzMAM3NzQDOzs4A0NDQANHR0QDT09MA1NTUANXV1QDW1tYA19fXANjY2ADZ2dkA2traANzc3ADd3d0A39/fAOHh4QDi4uIA4+PjAOTk5ADm5uYA6OjoAOnp6QDr6+sA7OzsAO3t7QDu7u4A7+/vAPHx8QDz8/MA9PT0APX19QD29vYA9/f3APj4+AD5+fkA+/v7APz8/AD+/v4A////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAampqampqampqampqampqampqAABqampqampqalQQAQdmampqamoAAGpqampqamFqFiUaMmpqampqagAAampqampDaDQSaltLampqampqAABqampqUVleImpqQCQxampqamoAAGpqamo5aihgakBEPCpQampqagAAampqajteUWpmR2ppUUFqampqAABqamceHj5gaFhWJ1hqP2pqamoAAGpqajRqRkhdajRIVDY0SVpqagAAampYOlVqLGplX2piKmNITmpqAABqV0MPI2pqWwxKZRE9agY5TGoAAGpPAxUIZFwXajhYH1UiDQQwagAAakAJV0oOGC8uTTk7HBRXLSFqAABqNRNcakMIAAAoNwILVGpKGmoAAGpQBVtqalQjIz0mIFJqaiUjagAAakwZGjlQRVdqampYSkczCkNqAABqak8rHRtCVmpqalxBKSNTZ2oAAGpqampqampqampqampqampqagAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA><link rel=canonical href=https://www.gnu.org/software/gettext/manual/html_node/C_0023.html></head>
+<body lang=en>
+<a name=C_0023></a>
+<div class=header>
+<p>
+Next: <a href=https://www.gnu.org/software/gettext/manual/html_node/JavaScript.html#JavaScript accesskey=n rel=next>JavaScript</a>, Previous: <a href=https://www.gnu.org/software/gettext/manual/html_node/Java.html#Java accesskey=p rel=prev>Java</a>, Up: <a href=https://www.gnu.org/software/gettext/manual/html_node/List-of-Programming-Languages.html#List-of-Programming-Languages accesskey=u rel=up>List of Programming Languages</a> &nbsp; [<a href=https://www.gnu.org/software/gettext/manual/html_node/index.html#SEC_Contents title="Table of contents" rel=contents>Contents</a>][<a href=https://www.gnu.org/software/gettext/manual/html_node/Program-Index.html#Program-Index title=Index rel=index>Index</a>]</p>
+</div>
+<hr>
+<a name=C_0023-1></a>
+<h4 class=subsection>15.5.4 C#</h4>
+<a name=index-C_0023></a>
+<dl compact>
+<dt>RPMs</dt>
+<dd><p>mono
+</p>
+</dd>
+<dt>Ubuntu packages</dt>
+<dd><p>mono-mcs
+</p>
+</dd>
+<dt>File extension</dt>
+<dd><p><code>cs</code>
+</p>
+</dd>
+<dt>String syntax</dt>
+<dd><p><code>"abc"</code>, <code>@"abc"</code>
+</p>
+</dd>
+<dt>gettext shorthand</dt>
+<dd><p>_("abc")
+</p>
+</dd>
+<dt>gettext/ngettext functions</dt>
+<dd><p><code>GettextResourceManager.GetString</code>,
+<code>GettextResourceManager.GetPluralString</code>
+<code>GettextResourceManager.GetParticularString</code>
+<code>GettextResourceManager.GetParticularPluralString</code>
+</p>
+</dd>
+<dt>textdomain</dt>
+<dd><p><code>new GettextResourceManager(domain)</code>
+</p>
+</dd>
+<dt>bindtextdomain</dt>
+<dd><p>—, compiled message catalogs are located in subdirectories of the directory
+containing the executable
+</p>
+</dd>
+<dt>setlocale</dt>
+<dd><p>automatic
+</p>
+</dd>
+<dt>Prerequisite</dt>
+<dd><p>—
+</p>
+</dd>
+<dt>Use or emulate GNU gettext</dt>
+<dd><p>—, uses a C# specific message catalog format
+</p>
+</dd>
+<dt>Extractor</dt>
+<dd><p><code>xgettext -k_</code>
+</p>
+</dd>
+<dt>Formatting with positions</dt>
+<dd><p><code>String.Format "{1} {0}"</code>
+</p>
+</dd>
+<dt>Portability</dt>
+<dd><p>fully portable
+</p>
+</dd>
+<dt>po-mode marking</dt>
+<dd><p>—
+</p></dd>
+</dl>
+<p>Before marking strings as internationalizable, uses of the string
+concatenation operator need to be converted to <code>String.Format</code>
+invocations. For example, <code>"file "+filename+" not found"</code> becomes
+<code>String.Format("file {0} not found", filename)</code>.
+Only after this is done, can the strings be marked and extracted.
+</p>
+<p>GNU gettext uses the native C#/.NET internationalization mechanism, namely
+the classes <code>ResourceManager</code> and <code>ResourceSet</code>. Applications
+use the <code>ResourceManager</code> methods to retrieve the native language
+translation of strings. An instance of <code>ResourceSet</code> is the in-memory
+representation of a message catalog file. The <code>ResourceManager</code> loads
+and accesses <code>ResourceSet</code> instances as needed to look up the
+translations.
+</p>
+<p>There are two formats of <code>ResourceSet</code>s that can be directly loaded by
+the C# runtime: <code>.resources</code> files and <code>.dll</code> files.
+</p>
+<ul>
+<li> The <code>.resources</code> format is a binary file usually generated through the
+<code>resgen</code> or <code>monoresgen</code> utility, but which doesn’t support plural
+forms. <code>.resources</code> files can also be embedded in .NET <code>.exe</code> files.
+This only affects whether a file system access is performed to load the message
+catalog; it doesn’t affect the contents of the message catalog.
+<li> On the other hand, the <code>.dll</code> format is a binary file that is compiled
+from <code>.cs</code> source code and can support plural forms (provided it is
+accessed through the GNU gettext API, see below).
+</ul>
+<p>Note that these .NET <code>.dll</code> and <code>.exe</code> files are not tied to a
+particular platform; their file format and GNU gettext for C# can be used
+on any platform.
+</p>
+<p>To convert a PO file to a <code>.resources</code> file, the <code>msgfmt</code> program
+can be used with the option ‘<samp>--csharp-resources</samp>’. To convert a
+<code>.resources</code> file back to a PO file, the <code>msgunfmt</code> program can be
+used with the option ‘<samp>--csharp-resources</samp>’. You can also, in some cases,
+use the <code>monoresgen</code> program (from the <code>mono</code>/<code>mcs</code> package).
+This program can also convert a <code>.resources</code> file back to a PO file. But
+beware: as of this writing (January 2004), the <code>monoresgen</code> converter is
+quite buggy.
+</p>
+<p>To convert a PO file to a <code>.dll</code> file, the <code>msgfmt</code> program can be
+used with the option <code>--csharp</code>. The result will be a <code>.dll</code> file
+containing a subclass of <code>GettextResourceSet</code>, which itself is a subclass
+of <code>ResourceSet</code>. To convert a <code>.dll</code> file containing a
+<code>GettextResourceSet</code> subclass back to a PO file, the <code>msgunfmt</code>
+program can be used with the option <code>--csharp</code>.
+</p>
+<p>The advantages of the <code>.dll</code> format over the <code>.resources</code> format
+are:
+</p>
+<ol>
+<li> Freedom to localize: Users can add their own translations to an application
+after it has been built and distributed. Whereas when the programmer uses
+a <code>ResourceManager</code> constructor provided by the system, the set of
+<code>.resources</code> files for an application must be specified when the
+application is built and cannot be extended afterwards.
+<li> Plural handling: A message catalog in <code>.dll</code> format supports the plural
+handling function <code>GetPluralString</code>. Whereas <code>.resources</code> files can
+only contain data and only support lookups that depend on a single string.
+<li> Context handling: A message catalog in <code>.dll</code> format supports the
+query-with-context functions <code>GetParticularString</code> and
+<code>GetParticularPluralString</code>. Whereas <code>.resources</code> files can
+only contain data and only support lookups that depend on a single string.
+<li> The <code>GettextResourceManager</code> that loads the message catalogs in
+<code>.dll</code> format also provides for inheritance on a per-message basis.
+For example, in Austrian (<code>de_AT</code>) locale, translations from the German
+(<code>de</code>) message catalog will be used for messages not found in the
+Austrian message catalog. This has the consequence that the Austrian
+translators need only translate those few messages for which the translation
+into Austrian differs from the German one. Whereas when working with
+<code>.resources</code> files, each message catalog must provide the translations
+of all messages by itself.
+<li> The <code>GettextResourceManager</code> that loads the message catalogs in
+<code>.dll</code> format also provides for a fallback: The English <var>msgid</var> is
+returned when no translation can be found. Whereas when working with
+<code>.resources</code> files, a language-neutral <code>.resources</code> file must
+explicitly be provided as a fallback.
+</ol>
+<p>On the side of the programmatic APIs, the programmer can use either the
+standard <code>ResourceManager</code> API and the GNU <code>GettextResourceManager</code>
+API. The latter is an extension of the former, because
+<code>GettextResourceManager</code> is a subclass of <code>ResourceManager</code>.
+</p>
+<ol>
+<li> The <code>System.Resources.ResourceManager</code> API.
+<p>This API works with resources in <code>.resources</code> format.
+</p>
+<p>The creation of the <code>ResourceManager</code> is done through
+<div class=smallexample>
+<pre class=smallexample>  new ResourceManager(domainname, Assembly.GetExecutingAssembly())
+</pre></div>
+<p>The <code>GetString</code> function returns a string’s translation. Note that this
+function returns null when a translation is missing (i.e. not even found in
+the fallback resource file).
+</p>
+<li> The <code>GNU.Gettext.GettextResourceManager</code> API.
+<p>This API works with resources in <code>.dll</code> format.
+</p>
+<p>Reference documentation is in the
+<a href=https://www.gnu.org/software/gettext/manual/html_node/csharpdoc/index.html>csharpdoc directory</a>.
+</p>
+<p>The creation of the <code>ResourceManager</code> is done through
+<div class=smallexample>
+<pre class=smallexample>  new GettextResourceManager(domainname)
+</pre></div>
+<p>The <code>GetString</code> function returns a string’s translation. Note that when
+a translation is missing, the <var>msgid</var> argument is returned unchanged.
+</p>
+<p>The <code>GetPluralString</code> function returns a string translation with plural
+handling, like the <code>ngettext</code> function in C.
+</p>
+<p>The <code>GetParticularString</code> function returns a string’s translation,
+specific to a particular context, like the <code>pgettext</code> function in C.
+Note that when a translation is missing, the <var>msgid</var> argument is returned
+unchanged.
+</p>
+<p>The <code>GetParticularPluralString</code> function returns a string translation,
+specific to a particular context, with plural handling, like the
+<code>npgettext</code> function in C.
+</p>
+<a name=index-libintl-for-C_0023></a>
+<p>To use this API, one needs the <code>GNU.Gettext.dll</code> file which is part of
+the GNU gettext package and distributed under the LGPL.
+</p></ol>
+<p>You can also mix both approaches: use the
+<code>GNU.Gettext.GettextResourceManager</code> constructor, but otherwise use
+only the <code>ResourceManager</code> type and only the <code>GetString</code> method.
+This is appropriate when you want to profit from the tools for PO files,
+but don’t want to change an existing source code that uses
+<code>ResourceManager</code> and don’t (yet) need the <code>GetPluralString</code> method.
+</p>
+<p>Two examples, using the second API, are available in the <samp>examples</samp>
+directory: <code>hello-csharp</code>, <code>hello-csharp-forms</code>.
+</p>
+<p>Now, to make use of the API and define a shorthand for ‘<samp>GetString</samp>’,
+there are two idioms that you can choose from:
+</p>
+<ul>
+<li> In a unique class of your project, say ‘<samp>Util</samp>’, define a static variable
+holding the <code>ResourceManager</code> instance:
+<div class=smallexample>
+<pre class=smallexample>public static GettextResourceManager MyResourceManager =
+  new GettextResourceManager("domain-name");
+</pre></div>
+<p>All classes containing internationalized strings then contain
+</p>
+<div class=smallexample>
+<pre class=smallexample>private static GettextResourceManager Res = Util.MyResourceManager;
+private static String _(String s) { return Res.GetString(s); }
+</pre></div>
+<p>and the shorthand is used like this:
+</p>
+<div class=smallexample>
+<pre class=smallexample>Console.WriteLine(_("Operation completed."));
+</pre></div>
+<li> You add a class with a very short name, say ‘<samp>S</samp>’, containing just the
+definition of the resource manager and of the shorthand:
+<div class=smallexample>
+<pre class=smallexample>public class S {
+  public static GettextResourceManager MyResourceManager =
+    new GettextResourceManager("domain-name");
+  public static String _(String s) {
+     return MyResourceManager.GetString(s);
+  }
+}
+</pre></div>
+<p>and the shorthand is used like this:
+</p>
+<div class=smallexample>
+<pre class=smallexample>Console.WriteLine(S._("Operation completed."));
+</pre></div>
+</ul>
+<p>Which of the two idioms you choose, will depend on whether copying two lines
+of codes into every class is more acceptable in your project than a class
+with a single-letter name.
+</p>
+<hr>
+<div class=header>
+<p>
+Next: <a href=https://www.gnu.org/software/gettext/manual/html_node/JavaScript.html#JavaScript accesskey=n rel=next>JavaScript</a>, Previous: <a href=https://www.gnu.org/software/gettext/manual/html_node/Java.html#Java accesskey=p rel=prev>Java</a>, Up: <a href=https://www.gnu.org/software/gettext/manual/html_node/List-of-Programming-Languages.html#List-of-Programming-Languages accesskey=u rel=up>List of Programming Languages</a> &nbsp; [<a href=https://www.gnu.org/software/gettext/manual/html_node/index.html#SEC_Contents title="Table of contents" rel=contents>Contents</a>][<a href=https://www.gnu.org/software/gettext/manual/html_node/Program-Index.html#Program-Index title=Index rel=index>Index</a>]</p>
+</div>
+<div id=grammalecte_menu_main_button_shadow_host style=width:0px;height:0px><template shadowmode=open><style>div.grammalecte_menu_main_button{all:initial;position:absolute;box-sizing:border-box;display:none;margin:-10px 0 0 -18px;width:20px;height:20px;background-color:hsla(210,80%,95%,.5);border:3px solid hsla(210,80%,50%,.9);border-top:3px solid hsla(210,80%,90%,.9);border-left:3px solid hsla(210,80%,90%,.9);border-radius:50%;font-family:"Trebuchet MS","Fira Sans","Ubuntu Condensed","Liberation Sans",sans-serif;text-align:center;cursor:pointer;box-shadow:0 0 0 0 hsla(210,80%,50%,.7);z-index:2147483640;animation:grammalecte-spin 2s ease 1}div.grammalecte_menu_main_button:hover{background-color:hsla(210,80%,50%,.05);animation:grammalecte-spin .5s linear infinite}@keyframes grammalecte-spin{0%{transform:rotate(0deg) scale(1)}50%{transform:rotate(180deg) scale(.9);box-shadow:0 0 0 10px hsla(210,50%,50%,0)}100%{transform:rotate(360deg) scale(1);box-shadow:0 0 0 0 hsla(210,50%,50%,0)}}</style><div class=grammalecte_menu_main_button style=display:none> </div></template></div><script data-template-shadow-root>(()=>{document.currentScript.remove();processNode(document);function processNode(node){node.querySelectorAll("template[shadowmode]").forEach(element=>{let shadowRoot = element.parentElement.shadowRoot;if (!shadowRoot) {try {shadowRoot=element.parentElement.attachShadow({mode:element.getAttribute("shadowmode"),delegatesFocus:Boolean(element.getAttribute("delegatesfocus"))});shadowRoot.innerHTML=element.innerHTML;element.remove()} catch (error) {} if (shadowRoot) {processNode(shadowRoot)}}})}})()</script>

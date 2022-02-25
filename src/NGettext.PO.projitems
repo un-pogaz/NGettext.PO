@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>08a7ce8a-4eac-4b48-87ac-f0745bcf531f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>NGettext.PO</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Catalog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\ICatalog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\BigEndianBinaryReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\CatalogLoadingException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\ContentType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\ILoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\MoAstPluralLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\MoFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\MoFileParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\MoLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\ReadOnlyStreamWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\AstPluralRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\AstPluralRuleGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\AstTokenParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\ParserException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\Token.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\TokenDefinition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\TokenType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\DefaultPluralRuleGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\IPluralRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\IPluralRuleGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\IPluralRuleTextParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\PluralRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\PluralRuleEvaluatorDelegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\PO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)NGettext\GetText PO Csharp.xhtml" />
+  </ItemGroup>
+</Project>
