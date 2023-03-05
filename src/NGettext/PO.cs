@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Text;
 
 namespace NGettext
 {
@@ -107,13 +108,53 @@ namespace NGettext
         {
             return Translator.GetString(text);
         }
+
+        /// <summary>
+        /// Returns <paramref name="text"/> translated into the selected language using given <paramref name="context"/>.
+        /// Similar to <c>pgettext</c> function.
+        /// </summary>
+        /// <param name="context">Context.</param>
+        /// <param name="text">Text to translate.</param>
+        /// <returns>Translated text.</returns>
+        public static string _(string context, string text)
+        {
+            return Translator.GetParticularString(context, text);
+        }
+
+        /// <summary>
+        /// Returns the plural form for <paramref name="n"/> of the translation of <paramref name="text"/>.
+        /// Similar to <c>ngettext</c> function.
+        /// </summary>
+        /// <param name="text">Singular form of message to translate.</param>
+        /// <param name="pluralText">Plural form of message to translate.</param>
+        /// <param name="n">Value that determines the plural form.</param>
+        /// <returns>Translated text.</returns>
+        public static string _(string text, string pluralText, long n)
+        {
+            return Translator.GetPluralString(text, pluralText, n);
+        }
+
+        /// <summary>
+        /// Returns the plural form for <paramref name="n"/> of the translation of <paramref name="text"/> using given <paramref name="context"/>.
+        /// Similar to <c>npgettext</c> function.
+        /// </summary>
+        /// <param name="context">Context.</param>
+        /// <param name="text">Singular form of message to translate.</param>
+        /// <param name="pluralText">Plural form of message to translate.</param>
+        /// <param name="n">Value that determines the plural form.</param>
+        /// <returns>Translated text.</returns>
+        public static string _(string context, string text, string pluralText, long n)
+        {
+            return Translator.GetParticularPluralString(context, text, pluralText, n);
+        }
+
         /// <summary>
         /// Returns <paramref name="text"/> translated into the selected language.
         /// Similar to <c>gettext</c> function.
         /// </summary>
         /// <param name="text">Text to translate.</param>
         /// <param name="args">Optional arguments for <see cref="string.Format(string, object[])"/> method.</param>
-        public static string _(string text, params object[] args)
+        public static string _f(string text, params object[] args)
         {
             return Translator.GetString(text, args);
         }
@@ -124,20 +165,9 @@ namespace NGettext
         /// </summary>
         /// <param name="context">Context.</param>
         /// <param name="text">Text to translate.</param>
-        /// <returns>Translated text.</returns>
-        public static string _c(string context, string text)
-        {
-            return Translator.GetParticularString(context, text);
-        }
-        /// <summary>
-        /// Returns <paramref name="text"/> translated into the selected language using given <paramref name="context"/>.
-        /// Similar to <c>pgettext</c> function.
-        /// </summary>
-        /// <param name="context">Context.</param>
-        /// <param name="text">Text to translate.</param>
         /// <param name="args">Optional arguments for <see cref="string.Format(string, object[])"/> method.</param>
         /// <returns>Translated text.</returns>
-        public static string _c(string context, string text, params object[] args)
+        public static string _f(string context, string text, params object[] args)
         {
             return Translator.GetParticularString(context, text, args);
         }
@@ -149,21 +179,9 @@ namespace NGettext
         /// <param name="text">Singular form of message to translate.</param>
         /// <param name="pluralText">Plural form of message to translate.</param>
         /// <param name="n">Value that determines the plural form.</param>
-        /// <returns>Translated text.</returns>
-        public static string _p(string text, string pluralText, long n)
-        {
-            return Translator.GetPluralString(text, pluralText, n);
-        }
-        /// <summary>
-        /// Returns the plural form for <paramref name="n"/> of the translation of <paramref name="text"/>.
-        /// Similar to <c>ngettext</c> function.
-        /// </summary>
-        /// <param name="text">Singular form of message to translate.</param>
-        /// <param name="pluralText">Plural form of message to translate.</param>
-        /// <param name="n">Value that determines the plural form.</param>
         /// <param name="args">Optional arguments for <see cref="string.Format(string, object[])"/> method.</param>
         /// <returns>Translated text.</returns>
-        public static string _p(string text, string pluralText, long n, params object[] args)
+        public static string _f(string text, string pluralText, long n, params object[] args)
         {
             return Translator.GetPluralString(text, pluralText, n, args);
         }
@@ -176,26 +194,12 @@ namespace NGettext
         /// <param name="text">Singular form of message to translate.</param>
         /// <param name="pluralText">Plural form of message to translate.</param>
         /// <param name="n">Value that determines the plural form.</param>
-        /// <returns>Translated text.</returns>
-        public static string _cp(string context, string text, string pluralText, long n)
-        {
-            return Translator.GetParticularPluralString(context, text, pluralText, n);
-        }
-        /// <summary>
-        /// Returns the plural form for <paramref name="n"/> of the translation of <paramref name="text"/> using given <paramref name="context"/>.
-        /// Similar to <c>npgettext</c> function.
-        /// </summary>
-        /// <param name="context">Context.</param>
-        /// <param name="text">Singular form of message to translate.</param>
-        /// <param name="pluralText">Plural form of message to translate.</param>
-        /// <param name="n">Value that determines the plural form.</param>
         /// <param name="args">Optional arguments for <see cref="string.Format(string, object[])"/> method.</param>
         /// <returns>Translated text.</returns>
-        public static string _cp(string context, string text, string pluralText, long n, params object[] args)
+        public static string _f(string context, string text, string pluralText, long n, params object[] args)
         {
             return Translator.GetParticularPluralString(context, text, pluralText, n, args);
         }
-
 
 
         /// <summary>
@@ -258,18 +262,11 @@ namespace NGettext
             /// Similar to <c>gettext</c> function.
             /// </summary>
             public _Attribute(string text) : base(text) { }
-        }
-        /// <summary>
-        /// An attribute containing a localized string assosiated to this <see cref="Enum"/> field.
-        /// Similar to <c>pgettext</c> function.
-        /// </summary>
-        public class _cAttribute : EnumLocalizerAttribute
-        {
             /// <summary>
             /// An attribute containing a localized string assosiated to this <see cref="Enum"/> field.
             /// Similar to <c>pgettext</c> function.
             /// </summary>
-            public _cAttribute(string context, string text) : base(context, text) { }
+            public _Attribute(string context, string text) : base(context, text) { }
         }
     }
 
