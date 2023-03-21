@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CCFCEA46-3728-437F-82CB-F631A50979F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NGettext.PO</RootNamespace>
+    <AssemblyName>NGettext.PO</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Catalog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\ICatalog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\BigEndianBinaryReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\CatalogLoadingException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\ContentType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\ILoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\MoAstPluralLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\MoFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\MoFileParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\MoLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Loaders\ReadOnlyStreamWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\AstPluralRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\AstPluralRuleGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\AstTokenParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\ParserException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\Token.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\TokenDefinition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\Ast\TokenType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\DefaultPluralRuleGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\IPluralRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\IPluralRuleGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\IPluralRuleTextParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\PluralRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\Plural\PluralRuleEvaluatorDelegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGettext\PO.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
